@@ -1,13 +1,9 @@
-FROM node:18
+FROM nginx:alpine
 
-WORKDIR /app
+# Remove default nginx page
+RUN rm -rf /usr/share/nginx/html/*
 
-COPY package*.json ./
+# Copy YOUR website files into nginx folder
+COPY . "F:\MyWebsite\User2\Login.html"
 
-RUN npm install
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["node", "server.js"]
+EXPOSE 80
