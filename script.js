@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 const data = await res.json();
                 if (data.success) {
-                    window.location.href = 'Login.html';
+                    window.location.href = 'products.html';
                 } else {
-                    (msg || showInlineMessage()).textContent = data.message || 'Sorry! technical error facing';
+                    (msg || showInlineMessage()).textContent = data.message || 'Sorry! your data is not stored in database';
                 }
             } catch (err) {
-                (msg || showInlineMessage()).textContent = 'Sorry! technical error facing';
+                (msg || showInlineMessage()).textContent = 'Sorry! your data is not stored in database';
             }
         });
     }
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Buy buttons on products page
     document.querySelectorAll('.buy').forEach(btn => {
         btn.addEventListener('click', () => {
-            alert('Purchase successful — thank you!');
+            window.location.href = 'buy_page.html';
         });
     });
 
