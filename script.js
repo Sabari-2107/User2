@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 const data = await res.json();
                 if (data.success) {
-                    window.location.href = 'User_data.html';
+                    window.location.href = 'User_data.txt';
                 } else {
                     (msg || showInlineMessage()).textContent = data.message || 'Sorry! your data is not stored in database';
                 }
